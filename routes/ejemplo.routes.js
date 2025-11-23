@@ -1,0 +1,35 @@
+import { Router } from 'express';
+import {
+    getAllEjemplos,
+     getEjemploById,
+     postEjemplo,
+     putEjemplo,
+     deleteEjemplo
+} from '../controllers/ejemplo_controllers.js';
+
+const ejemplo = Router();
+
+ejemplo.get('/', getAllEjemplos);
+
+/*ejemplo.get('/', (req, res) => {
+
+    res.json({
+
+        msg: 'get all API'
+
+    });
+
+//});
+*/
+ejemplo.get('/:id' , getEjemploById
+);
+
+//ejemplo.put('/:id', putEjemplo);
+ejemplo.put('/:id', putEjemplo);
+
+
+ejemplo.post('/', postEjemplo);
+
+ejemplo.delete('/:id', deleteEjemplo);
+
+export default ejemplo;
